@@ -1,0 +1,62 @@
+/* Day 3 CSS: basic styling, fonts and colors */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #f0f2f5;
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 650px;
+  margin: 30px auto;
+}
+
+h1 {
+  color: #2b2d42;
+  font-size: 26px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 25px;
+}
+
+.card {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.card h2 {
+  color: #3a86ff;
+  margin-bottom: 10px;
+}
+
+.card p {
+  line-height: 1.5;
+  margin-bottom: 15px;
+}
+
+.btn {
+  background-color: #3a86ff;
+  color: white;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.btn:hover {
+  background-color: #2563eb;
+}
