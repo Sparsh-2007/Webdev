@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Day 1 - Learning Styles</title>
+  <title>CSS Day 1 - Box Model & Styles</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,10 +11,26 @@
     <h1>CSS Practice - Making Things Look Normal</h1>
     <p class="subtitle">Default HTML looks like it was made in 1993. Finally learning how to add colors and style things properly.</p>
 
-    <div class="card">
+    <!-- Main Profile Card -->
+    <div class="card shadow-card">
       <h2>Profile Card Test</h2>
       <p>My name is Sparsh and I'm currently figuring out why margin and padding behave so weirdly sometimes.</p>
       <button class="btn">Clickable Button</button>
+      <button class="btn btn-outline">Outline Button</button>
+    </div>
+
+    <!-- Box Model Visualizer -->
+    <div class="card box-model-card">
+      <h3>The Box Model (Margin vs Padding Test)</h3>
+      <p>Finally understood it: <b>Padding</b> is space inside the border, <b>Margin</b> is space outside.</p>
+      
+      <div class="box-demo box-padding">
+        <b>This box has 25px Padding</b> (content has breathing room inside)
+      </div>
+
+      <div class="box-demo box-margin">
+        <b>This box has 25px Margin</b> (pushes away from other things)
+      </div>
     </div>
   </div>
 </body>
