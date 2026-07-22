@@ -3,41 +3,65 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CSS Grid Practice</title>
+  <title>CSS Grid - Practice Gallery</title>
   <link rel="stylesheet" href="grid.css">
 </head>
 <body>
   <div class="wrapper">
     <header class="header">
-      <h1>CSS Grid Gallery Test</h1>
-      <p>Testing CSS grid with auto-fit and minmax. It arranges items automatically without media queries!</p>
+      <span class="badge">Day 5 CSS</span>
+      <h1>Practice Projects &amp; Notes Gallery</h1>
+      <p>Testing CSS Grid with <code>auto-fit</code> and <code>minmax</code>. The cards automatically resize to fit any screen size without breaking.</p>
     </header>
 
+    <!-- Responsive CSS Grid Container -->
     <div class="grid-container">
-      <div class="grid-item">
-        <div class="item-header">📸 Item 1</div>
-        <h4>Card Title Alpha</h4>
-        <p>Testing grid row and column behavior inside an auto-fit container.</p>
+      <div class="grid-card">
+        <div class="card-tag tag-blue">HTML</div>
+        <h3>First Webpage &amp; Bio</h3>
+        <p>Built basic HTML boilerplate with headings, favorite movies list, and a study routine table.</p>
+        <a href="../HTML/index.html" class="card-link">View Page &rarr;</a>
       </div>
 
-      <div class="grid-item">
-        <div class="item-header">⚡ Item 2</div>
-        <h4>Card Title Beta</h4>
-        <p>No floating divs or percentage calculations required.</p>
+      <div class="grid-card">
+        <div class="card-tag tag-blue">HTML</div>
+        <h3>Forms &amp; Inputs Practice</h3>
+        <p>Created user registration form with text, email, password, radios, checkboxes, and select dropdown.</p>
+        <a href="../HTML/form.html" class="card-link">View Page &rarr;</a>
       </div>
 
-      <div class="grid-item">
-        <div class="item-header">🚀 Item 3</div>
-        <h4>Card Title Gamma</h4>
-        <p>Each card expands and shrinks based on the screen width.</p>
+      <div class="grid-card">
+        <div class="card-tag tag-blue">HTML</div>
+        <h3>Tags &amp; Details Playground</h3>
+        <p>Experimented with collapsible spoiler tags, progress bars, meter gauges, and test button alerts.</p>
+        <a href="../HTML/tags_practice.html" class="card-link">View Page &rarr;</a>
       </div>
 
-      <div class="grid-item">
-        <div class="item-header">🎨 Item 4</div>
-        <h4>Card Title Delta</h4>
-        <p>Grid gap takes care of spacing without messy negative margins.</p>
+      <div class="grid-card">
+        <div class="card-tag tag-purple">CSS</div>
+        <h3>Box Model &amp; Colors</h3>
+        <p>Testing margin vs padding, border-radius, universal box-sizing, and custom button styles.</p>
+        <a href="index.html" class="card-link">View Page &rarr;</a>
+      </div>
+
+      <div class="grid-card">
+        <div class="card-tag tag-purple">CSS</div>
+        <h3>Flexbox Navbar &amp; Cards</h3>
+        <p>Built a horizontal navigation header and 3 flex cards with responsive mobile media queries.</p>
+        <a href="flexbox.html" class="card-link">View Page &rarr;</a>
+      </div>
+
+      <div class="grid-card card-highlight">
+        <div class="card-tag tag-green">Upcoming</div>
+        <h3>JavaScript Fundamentals</h3>
+        <p>Moving on to JS next: variables, conditionals, functions, loops, and interactive DOM manipulation.</p>
+        <span class="card-status">Starting Tomorrow</span>
       </div>
     </div>
+
+    <footer class="footer">
+      <p><a href="flexbox.html">&larr; Back to Flexbox</a> | <a href="index.html">CSS Home</a></p>
+    </footer>
   </div>
 </body>
 </html>
