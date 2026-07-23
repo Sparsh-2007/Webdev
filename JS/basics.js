@@ -27,6 +27,27 @@ if (age >= 18) {
   console.log("Not eligible");
 }
 
+// Arrays
+let languages = ["HTML", "CSS", "JavaScript"];
+languages.push("Python");
+console.log("My languages:", languages);
+
+// Array map & filter
+let numbers = [1, 2, 3, 4, 5, 6];
+let doubled = numbers.map(n => n * 2);
+let evenOnly = numbers.filter(n => n % 2 === 0);
+
+console.log("Doubled:", doubled);
+console.log("Evens:", evenOnly);
+
+// Simple object
+let user = {
+  username: "sparsh07",
+  role: "Developer",
+  isOnline: true
+};
+console.log("User profile:", user);
+
 function testAlert() {
   alert("External JS is working fine!");
 }
