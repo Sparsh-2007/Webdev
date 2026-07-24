@@ -13,7 +13,7 @@
         <h1>DOM Manipulation Practice</h1>
         <button id="themeToggleBtn" class="theme-btn">🌙 Dark Mode</button>
       </div>
-      <p>Day 7: Practicing <code>querySelector</code>, <code>addEventListener</code>, and changing the DOM.</p>
+      <p>Day 7: Practicing <code>querySelector</code>, <code>addEventListener</code>, and dynamic DOM updates.</p>
     </header>
 
     <!-- Project 1: The Classic Counter -->
@@ -30,6 +30,34 @@
         <button id="resetBtn" class="btn btn-gray">Reset</button>
         <button id="incrementBtn" class="btn btn-green">+ Increase</button>
       </div>
+    </div>
+
+    <!-- Project 2: Live Character Counter -->
+    <div class="card">
+      <h2>2. Live Character Counter</h2>
+      <p class="card-desc">Listens to the <code>input</code> event on every keystroke.</p>
+      
+      <input type="text" id="charInput" maxlength="60" placeholder="Type something to see live count..." class="text-input">
+      <div class="char-info">
+        <span id="charCount">0</span> / 60 characters
+      </div>
+    </div>
+
+    <!-- Project 3: Dynamic Item List -->
+    <div class="card">
+      <h2>3. Quick Todo / Item List</h2>
+      <p class="card-desc">Create elements dynamically with <code>document.createElement</code>. Click an item to remove it.</p>
+      
+      <div class="input-row">
+        <input type="text" id="itemInput" placeholder="Add study goal (e.g., Learn Promises)..." class="text-input">
+        <button id="addItemBtn" class="btn btn-blue">Add Item</button>
+      </div>
+
+      <ul id="itemList" class="item-list">
+        <li>Learn HTML5 semantic tags <span class="delete-hint">&times;</span></li>
+        <li>Practice CSS Flexbox and Grid <span class="delete-hint">&times;</span></li>
+        <li>Understand JavaScript DOM manipulation <span class="delete-hint">&times;</span></li>
+      </ul>
     </div>
   </div>
 

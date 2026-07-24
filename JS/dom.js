@@ -40,3 +40,52 @@ themeToggleBtn.addEventListener("click", () => {
   const isDark = document.body.classList.contains("dark-mode");
   themeToggleBtn.textContent = isDark ? "☀️ Light Mode" : "🌙 Dark Mode";
 });
+
+// 3. Live Character Counter
+const charInput = document.getElementById("charInput");
+const charCount = document.getElementById("charCount");
+
+charInput.addEventListener("input", (e) => {
+  charCount.textContent = e.target.value.length;
+});
+
+// 4. Dynamic Item List
+const itemInput = document.getElementById("itemInput");
+const addItemBtn = document.getElementById("addItemBtn");
+const itemList = document.getElementById("itemList");
+
+function createListItem(text) {
+  const li = document.createElement("li");
+  li.innerHTML = `${text} <span class="delete-hint">&times;</span>`;
+  li.title = "Click to remove";
+  li.addEventListener("click", () => {
+    li.remove();
+  });
+  return li;
+}
+
+// Add event listeners to initial items
+itemList.querySelectorAll("li").forEach((li) => {
+  li.title = "Click to remove";
+  li.addEventListener("click", () => {
+    li.remove();
+  });
+});
+
+function handleAddItem() {
+  const text = itemInput.value.trim();
+  if (text !== "") {
+    const newItem = createListItem(text);
+    itemList.appendChild(newItem);
+    itemInput.value = "";
+    itemInput.focus();
+  }
+}
+
+addItemBtn.addEventListener("click", handleAddItem);
+
+itemInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    handleAddItem();
+  }
+});
