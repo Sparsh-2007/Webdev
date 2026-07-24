@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM Manipulation & Events Practice</title>
+  <link rel="stylesheet" href="dom.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="header-top">
+        <h1>DOM Manipulation Practice</h1>
+        <button id="themeToggleBtn" class="theme-btn">🌙 Dark Mode</button>
+      </div>
+      <p>Day 7: Practicing <code>querySelector</code>, <code>addEventListener</code>, and changing the DOM.</p>
+    </header>
+
+    <!-- Project 1: The Classic Counter -->
+    <div class="card">
+      <h2>1. Interactive Counter</h2>
+      <p class="card-desc">State tracking with number color feedback.</p>
+      
+      <div class="counter-display">
+        <span id="counterValue">0</span>
+      </div>
+
+      <div class="btn-group">
+        <button id="decrementBtn" class="btn btn-red">&minus; Decrease</button>
+        <button id="resetBtn" class="btn btn-gray">Reset</button>
+        <button id="incrementBtn" class="btn btn-green">+ Increase</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="dom.js"></script>
+</body>
+</html>
