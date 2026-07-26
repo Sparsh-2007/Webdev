@@ -14,5 +14,14 @@ def about():
 def health():
     return {"status": "ok"}
 
+@app.route("/user/<username>")
+def get_username(username: str):
+    return {"message": f"Hello, {username}!"}
+
+@app.route("/user/<int:id>")
+def get_user_id(id: int):
+    # test integer parameter
+    return {"user_id": id, "type": "integer"}
+
 if __name__ == "__main__":
     app.run(debug=True)
