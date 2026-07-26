@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 
 app = Flask(__name__)
 
@@ -13,6 +13,11 @@ def about():
 @app.route("/health")
 def health():
     return {"status": "ok"}
+
+@app.route("/home")
+def home_page():
+    topics = ["Routing & URL Parameters", "Jinja2 Templates", "Request Handling", "Pydantic Models"]
+    return render_template("index.html", username="Sparsh", topics=topics)
 
 @app.route("/user/<username>")
 def get_username(username: str):
