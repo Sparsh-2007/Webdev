@@ -3,7 +3,6 @@ from models import User
 
 app = Flask(__name__)
 
-# sample in-memory users list
 users = [
     User(id=1, name="Aman", username="aman123", email="aman@example.com", password="secretpassword"),
     User(id=2, name="Ram", username="ram_g", email="ram@example.com", password="rampassword")
@@ -30,12 +29,16 @@ def home_page():
 def get_username(username: str):
     return {"message": f"Hello, {username}!"}
 
+@app.route("/users")
+def get_all_users():
+    return {"users": [u.model_dump() for u in users]}
+
 @app.route("/user/<int:id>")
 def get_user_id(id: int):
     for u in users:
         if u.id == id:
-            return {"message": users}
-    return {"message": "User not found"}
+            return {"user": u.model_dump()}
+    return {"error": "User not found"}, 404
 
 if __name__ == "__main__":
     app.run(debug=True)
