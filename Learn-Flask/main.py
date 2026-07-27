@@ -1,6 +1,13 @@
 from flask import Flask, render_template
+from models import User
 
 app = Flask(__name__)
+
+# sample in-memory users list
+users = [
+    User(id=1, name="Aman", username="aman123", email="aman@example.com", password="secretpassword"),
+    User(id=2, name="Ram", username="ram_g", email="ram@example.com", password="rampassword")
+]
 
 @app.route("/")
 def read_root():
@@ -25,8 +32,10 @@ def get_username(username: str):
 
 @app.route("/user/<int:id>")
 def get_user_id(id: int):
-    # test integer parameter
-    return {"user_id": id, "type": "integer"}
+    for u in users:
+        if u.id == id:
+            return {"message": users}
+    return {"message": "User not found"}
 
 if __name__ == "__main__":
     app.run(debug=True)
