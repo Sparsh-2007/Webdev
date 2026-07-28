@@ -1,6 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
+from pydantic import BaseModel
 
 template = Jinja2Templates(directory="Templates")
 
@@ -29,6 +30,10 @@ posts = [
     },
 ]
 
+class PostCreate(BaseModel):
+    title: str
+    content: str
+
 @app.get("/html", response_class=HTMLResponse)
 def read_root():
     return "<h1>hello world</h1>"
@@ -38,3 +43,8 @@ def new(request: Request):
     return template.TemplateResponse(request, "home.html", {
         'posts': posts
     })
+
+@app.get("/items")
+def read_items(skip: int = 0, limit: int = 10, search: str | None = None):
+    # testing query parameters
+    return {"skip": skip, "limit": limit, "search": search}
