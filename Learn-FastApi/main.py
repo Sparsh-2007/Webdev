@@ -38,6 +38,3 @@ def new(request: Request):
     return template.TemplateResponse(request, "home.html", {
         'posts': posts
     })
-
-
-d
