@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, HTTPException, status
 from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from pydantic import BaseModel
@@ -46,5 +46,22 @@ def new(request: Request):
 
 @app.get("/items")
 def read_items(skip: int = 0, limit: int = 10, search: str | None = None):
-    # testing query parameters
     return {"skip": skip, "limit": limit, "search": search}
+
+@app.get("/posts/{post_id}")
+def get_post(post_id: int):
+    for post in posts:
+        if post["id"] == post_id:
+            return post
+    raise HTTPException(status_code=404, detail="Post not found")
+
+@app.post("/posts", status_code=status.HTTP_201_CREATED)
+def create_post(post_data: PostCreate):
+    new_id = len(posts) + 1
+    new_post = {
+        "id": new_id,
+        "title": post_data.title,
+        "content": post_data.content
+    }
+    posts.append(new_post)
+    return {"message": "Post created successfully", "post": new_post}
