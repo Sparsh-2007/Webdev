@@ -5,7 +5,7 @@ from pydantic import BaseModel
 
 template = Jinja2Templates(directory="Templates")
 
-app = FastAPI()
+app = FastAPI(title="FastAPI Learning Playground")
 
 posts = [
     {
@@ -48,6 +48,17 @@ def new(request: Request):
 def read_items(skip: int = 0, limit: int = 10, search: str | None = None):
     return {"skip": skip, "limit": limit, "search": search}
 
+@app.get("/posts")
+def get_all_posts(search: str | None = None):
+    # support search filter across titles and content
+    if search:
+        filtered = [
+            p for p in posts 
+            if search.lower() in p["title"].lower() or search.lower() in p["content"].lower()
+        ]
+        return filtered
+    return posts
+
 @app.get("/posts/{post_id}")
 def get_post(post_id: int):
     for post in posts:
@@ -65,3 +76,11 @@ def create_post(post_data: PostCreate):
     }
     posts.append(new_post)
     return {"message": "Post created successfully", "post": new_post}
+
+@app.delete("/posts/{post_id}")
+def delete_post(post_id: int):
+    for index, post in enumerate(posts):
+        if post["id"] == post_id:
+            deleted = posts.pop(index)
+            return {"message": "Post deleted successfully", "post": deleted}
+    raise HTTPException(status_code=404, detail="Post not found")
