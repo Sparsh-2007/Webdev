@@ -135,7 +135,7 @@ uv run uvicorn main:app --reload
 
 ---
 
-## 🎯 Roadmap & What's Next
+## 🎯 Learning Milestones & Roadmap
 
 - [x] HTML5 Semantics, Tables, and Forms
 - [x] CSS Box Model, Flexbox layouts, and Grid galleries
